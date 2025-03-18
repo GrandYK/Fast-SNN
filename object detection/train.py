@@ -29,7 +29,18 @@ from utils.cocoapi_evaluator import COCOAPIEvaluator
 from utils.vocapi_evaluator import VOCAPIEvaluator
 from utils.modules import ModelEMA
 # from backbone.quant_layer import QuantReLU
+# ------------------------------------------------------------------------------new_by_grand
+# 新增烟火检测
+from data.fire_smoke import fire_smoke_class_labels, fire_smoke_class_index
+from config.fire_smoke_config import fire_smoke_cfg
 
+# 使用 fire_smoke_cfg 代替原有的配置
+cfg = fire_smoke_cfg
+
+# 更新类别标签和索引
+class_labels = fire_smoke_class_labels
+class_index = fire_smoke_class_index
+# ------------------------------------------------------------------------------new_by_grand
 def parse_args():
     parser = argparse.ArgumentParser(description='YOLO Detection')
     # basic
